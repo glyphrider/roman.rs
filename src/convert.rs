@@ -41,7 +41,7 @@ pub fn from(roman: &str) -> u16 {
 }
 
 fn from_n(roman: &mut String, result: &mut u16, arabic_value: u16, roman_value: &str) {
-    while roman.clone().starts_with(roman_value) {
+    while roman.starts_with(roman_value) {
         *result = *result + arabic_value;
         let len = roman_value.len();
         let working_roman: String = roman.clone();
