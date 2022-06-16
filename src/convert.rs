@@ -10,11 +10,6 @@ pub fn to(arabic: u16) -> String {
         let (arabic_value,roman_value) = e;
         to_n(&mut working_arabic, &mut result, *arabic_value, roman_value);
     }
-    // to_n(&mut working_arabic, &mut result, 10, "X");
-    // to_n(&mut working_arabic, &mut result, 9, "IX");
-    // to_n(&mut working_arabic, &mut result, 5, "V");
-    // to_n(&mut working_arabic, &mut result, 4, "IV");
-    // to_n(&mut working_arabic,&mut result, 1, "I");
     return result
 }
 
@@ -36,7 +31,6 @@ pub fn from(roman: &str) -> u16 {
         let (arabic_value,roman_value) = e;
         from_n(&mut working_roman, &mut result, *arabic_value, roman_value);
     }
-
     return result;
 }
 
