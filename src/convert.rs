@@ -36,14 +36,13 @@ pub fn from(roman: &str) -> u16 {
 
 fn from_n(roman: &mut String, result: &mut u16, arabic_value: u16, roman_value: &str) {
     while roman.starts_with(roman_value) {
-        *result = *result + arabic_value;
-        let len = roman_value.len();
         let working_roman: String = roman.clone();
         roman.clear();
         for (i,c) in working_roman.chars().enumerate() {
-            if i >= len {
+            if i >= roman_value.len() {
                 roman.push(c);
             }
         }
+        *result = *result + arabic_value;
     }
 }
